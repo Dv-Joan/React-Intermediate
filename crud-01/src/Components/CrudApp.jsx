@@ -13,12 +13,16 @@ export default function CrudApp() {
     data.id = Date.now();
     setDb([...db, data]);
   };
-  const updateData = (data) => {};
+  const updateData = (data) => {
+    let newData = db.map((bike) => (bike.id === data.id ? data : bike));
+    setDb(newData);
+  };
   const deleteData = (id) => {};
 
   return (
     <div>
       <div>BMX Crud</div>
+      <h3>{dataToEdit ? 'PANEL DE EDICION' : 'PANEL DE AGREGACION'}</h3>
       <div>
         <CrudForm
           createData={createData}

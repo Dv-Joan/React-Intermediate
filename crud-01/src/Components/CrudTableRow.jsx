@@ -1,13 +1,14 @@
 import React from 'react';
 
-export default function CrudTableRow({ bike }) {
+export default function CrudTableRow({ bike, setDataToEdit, deleteData }) {
+  let { id, company, bikeModel } = bike;
   return (
     <tr>
-      <td>{bike.company}</td>
-      <td>{bike.bikeModel}</td>
+      <td>{company}</td>
+      <td>{bikeModel}</td>
       <td>
-        <button>Edit</button>
-        <button>Delete</button>
+        <button onClick={() => setDataToEdit(bike)}>Edit</button>
+        <button onClick={() => deleteData(id)}>Delete</button>
       </td>
     </tr>
   );
