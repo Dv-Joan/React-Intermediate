@@ -3,18 +3,24 @@ import CrudTableRow from '../Components/CrudTableRow';
 
 export default function CrudTable({ data, setDataToEdit, deleteData }) {
   return (
-    <div>
-      <table>
-        <thead>
+    <div className='overflow-x-auto relative flex justify-center font-Saira font-bold '>
+      <table className='w-1/2 text-sm text-left text-gray-500 dark:text-gray-400 rounded-md'>
+        <thead className='text-xm tracking-wider text-gray-300 uppercase bg-gray-700 rounded-lg '>
           <tr>
-            <th>Company</th>
-            <th>Bike Model</th>
-            <th>Actions</th>
+            <th scope='col' className='py-3 px-6'>
+              Company
+            </th>
+            <th scope='col' className='py-3 px-6'>
+              Bike Model
+            </th>
+            <th scope='col' className='py-3 px-6 text-center'>
+              Actions
+            </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className='text-slate-600'>
           {data.length === 0 ? (
-            <tr>
+            <tr className='py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
               <td colSpan='3'>We couldn't found any bike in our Data Base</td>
             </tr>
           ) : (

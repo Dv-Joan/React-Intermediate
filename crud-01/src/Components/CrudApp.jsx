@@ -17,12 +17,21 @@ export default function CrudApp() {
     let newData = db.map((bike) => (bike.id === data.id ? data : bike));
     setDb(newData);
   };
-  const deleteData = (id) => {};
+  const deleteData = (id) => {
+    /* let isDelete = window.confirm('Are you sure you want to delete this BIKE');
+    if (isDelete) { */
+    let newData = db.filter((bike) => bike.id !== id);
+    setDb(newData);
+  };
 
   return (
     <div>
-      <div>BMX Crud</div>
-      <h3>{dataToEdit ? 'PANEL DE EDICION' : 'PANEL DE AGREGACION'}</h3>
+      <p className='font-Nabla text-7xl m-8 drop-shadow-xl'>
+        BMX Street C.R.U.D
+      </p>
+      <h3 className='text-red-500 font-Poppins'>
+        {dataToEdit ? 'PANEL DE EDICION' : 'PANEL DE AGREGACION'}
+      </h3>
       <div>
         <CrudForm
           createData={createData}

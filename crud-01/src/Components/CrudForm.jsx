@@ -38,23 +38,34 @@ export default function CrudForm({
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='font-Poppins font-light'>
         <input
+          className='bg-gray-50 border border-gray-300 py-1 px-3 my-4 mx-2 text-gray-900 text-sm rounded-md '
           type='text'
-          placeholder='Company ...'
+          placeholder='Company'
           name='company'
           value={form.company}
           onChange={handleChange}
         />
         <input
+          className='bg-gray-50 border border-gray-300 py-1 px-3 my-4 mx-2 text-gray-900 text-sm rounded-md '
           type='text'
-          placeholder='Model ...'
+          placeholder='Bike Model'
           name='bikeModel'
           value={form.bikeModel}
           onChange={handleChange}
         />
-        <input type='reset' value='Clean' onClick={handleReset} />
-        <input type='submit' value='Load' />
+        <input
+          type='reset'
+          value='Clean'
+          onClick={handleReset}
+          className='mx-2 p-1 px-6 bg-red-500 cursor-pointer hover:bg-red-600 text-slate-100 rounded-lg'
+        />
+        <input
+          type='submit'
+          value='Load'
+          className='mx-2 p-1 px-7 cursor-pointer bg-green-500 hover:bg-green-600 text-slate-100 rounded-lg'
+        />
       </form>
     </div>
   );
