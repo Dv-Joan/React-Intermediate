@@ -1,0 +1,9 @@
+{
+  "bikes": [
+    {
+      "id": 3,
+      "company": "WTP",
+      "bikeModel": "Predator 4.0 RTD"
+    }
+  ]
+}
