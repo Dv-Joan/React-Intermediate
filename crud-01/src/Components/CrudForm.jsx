@@ -23,6 +23,7 @@ export default function CrudForm({
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!form.company || !form.bikeModel) {
+      // Echar un ojo a esta funcion, cuando insertas datos vacios el sistema muestra el mensaje pero agrega el dato restringido.
       alert('Please instert all DATA ');
     }
     if (form.id === null) {
