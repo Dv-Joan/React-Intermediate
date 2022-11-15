@@ -8,7 +8,7 @@ export default function CrudTableRow({ bike, setDataToEdit, deleteData }) {
       <td className='py-4 px-6'>{bikeModel}</td>
       <td className='py-4 px-6 text-center'>
         <button
-          className='mx-2 p-1 px-5 bg-cyan-500 cursor-pointer hover:bg-cyan-600 text-slate-100  rounded-full '
+          className='mx-2 p-1 px-5 bg-cyan-500 cursor-pointer hover:bg-cyan-600 text-slate-100  rounded-full ' 
           onClick={() => setDataToEdit(bike)}
         >
           Edit

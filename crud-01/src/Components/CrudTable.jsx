@@ -32,7 +32,8 @@ export default function CrudTable({ data, setDataToEdit, deleteData }) {
                 deleteData={deleteData}
               />
             ))
-          )}
+          )
+          }
         </tbody>
       </table>
     </div>

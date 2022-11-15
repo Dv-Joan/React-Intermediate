@@ -16,7 +16,9 @@ export default function CrudForm({
       setForm(initialForm);
     }
   }, [dataToEdit]);
-
+  
+    
+  
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };

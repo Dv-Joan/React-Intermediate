@@ -7,6 +7,7 @@ module.exports = {
       Poppins: ['Poppins'],
       Nabla: ['Nabla'],
       Saira: ['Saira Condensed'],
+      Roboto: ['Roboto'],
     },
   },
   plugins: [],
