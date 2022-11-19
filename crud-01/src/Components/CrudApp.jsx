@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import CrudForm from '../Components/CrudForm';
-import CrudTable from '../Components/CrudTable';
+import React, { useState } from "react";
+import CrudForm from "../Components/CrudForm";
+import CrudTable from "../Components/CrudTable";
 
 const initialDB = [
-  { id: 1, company: 'WTP', bikeModel: 'Predator 2.0 RTD' },
-  { id: 2, company: 'WTP', bikeModel: 'Predator 1.0 RTD' },
+  { id: 1, company: "WTP", bikeModel: "Predator 2.0 RTD" },
+  { id: 2, company: "WTP", bikeModel: "Predator 1.0 RTD" },
 ];
 export default function CrudApp() {
   const [db, setDb] = useState(initialDB);
@@ -25,13 +25,22 @@ export default function CrudApp() {
   };
 
   return (
-    <div>
-      <p className='font-Nabla text-7xl m-8 drop-shadow-xl'>
+    <div className="my-16">
+      <p className=" text-center font-Nabla text-7xl m-8 drop-shadow-xl">
         BMX Street C.R.U.D
       </p>
-      <h3 className='text-red-500 font-Poppins'>
-        {dataToEdit ? 'PANEL DE EDICION' : 'PANEL DE AGREGACION'}
-      </h3>
+      <div className="flex justify-center">
+        <div className="bg-rose-200 rounded px-5 py-2 w-96 border-dotted border-2 border-slate-500 ">
+          <h3 className="text-red-700 font-Roboto  text-center">
+            PANEL DE
+            {dataToEdit ? (
+              <span className="font-bold"> EDICIÓN</span>
+            ) : (
+              <span className="font-bold"> AGREGACIÓN</span>
+            )}
+          </h3>
+        </div>
+      </div>
       <div>
         <CrudForm
           createData={createData}
