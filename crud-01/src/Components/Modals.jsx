@@ -14,7 +14,7 @@ function Modals() {
   return (
     <div className=" flex justify-center">
       <div>
-        <h3 className="font-bold text-slate-800 text-3xl p-4 my-8 text-center font-Roboto">
+        <h3 className="font-bold text-slate-800 text-4xl p-4 my-8 text-center font-Roboto">
           Modals
         </h3>
         <div className="flex gap-5 mb-7 justify-center bg-slate-800 p-14 m-7 rounded-lg">
