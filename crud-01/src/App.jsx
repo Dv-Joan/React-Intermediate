@@ -11,7 +11,7 @@ import Gif from "./Images/opener-loading.gif";
 function App() {
   return (
     <Router>
-      <nav className="bg-white border-gray-200 px-2 sm:px-4 py-3 font-Roboto rounded-b-full dark:bg-gray-900">
+      <nav className="bg-white border-gray-200 px-2 sm:px-4 py-3 font-Roboto rounded-b-full dark:bg-gray-900 drop-shadow-lg">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
           <Link to="/" className="flex items-center">
             <img src={Gif} className="h-10 mr-3 sm:h-16" alt="My Experience" />

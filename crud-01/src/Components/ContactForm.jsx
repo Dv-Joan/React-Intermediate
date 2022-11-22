@@ -50,13 +50,13 @@ function ContactForm() {
   } = useForm(initialForm, validationsForm);
 
   return (
-    <div className="flex justify-center font-Roboto rounded-xl pt-2 px-10  ">
+    <div className="flex justify-center font-Roboto rounded-xl pt-2 px-10 ">
       <form onSubmit={handleSubmit}>
-        <h2 className="text-4xl py-10 font-bold dark:text-slate-800 text-center">
+        <h2 className="text-4xl py-12 font-bold dark:text-slate-800 text-center bg-blur-sm">
           Validacion de un Formulario
         </h2>
 
-        <div className=" bg-slate-800 px-20 rounded-xl py-5">
+        <div className="bg-slate-700 px-10 rounded-2xl py-20">
           <div className="mb-2">
             <br />
             <input
