@@ -53,7 +53,11 @@ function MyPage() {
   };
   return (
     <div className="font-Roboto bg-slate-600 text-white rounded m-9 py-5">
-      <h3 className="text-center text-2xl">Mi Pagina sin Context API</h3>
+      <h3 className="text-center text-2xl">
+        Mi Pagina{" "}
+        <span className="bg-red-400 px-2 py-0.5 mx-1 rounded">sin</span> Context
+        API
+      </h3>
       <Header
         theme={theme}
         handleTheme={handleTheme}
