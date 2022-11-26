@@ -1,7 +1,0 @@
-{
-    "editor.fontFamily": "Fira Code",
-    "editor.fontSize": 17,
-    "files.autoSave": "onFocusChange",
-    "editor.lineNumbers": "interval",
-    "editor.wordWrap": "on"
-}
