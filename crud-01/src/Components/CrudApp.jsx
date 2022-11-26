@@ -53,7 +53,7 @@ export default function CrudApp() {
         </div>
         <div>
           <CrudForm />
-          <CrudTable data={db} />
+          <CrudTable />
         </div>
       </CrudAppContext.Provider>
     </div>

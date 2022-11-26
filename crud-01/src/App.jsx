@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import CrudApp from "./Components/CrudApp";
 import Modals from "./Components/Modals";
 import Error404 from "./Components/Error404";
-import CrudAPI from "./Components/CrudAPI";
 import HomePage from "./Components/HomePage";
 import Gif from "./Images/opener-loading.gif";
 
@@ -30,15 +29,7 @@ function App() {
                   Crud App
                 </Link>
               </li>
-              <li className=" ease-in duration-200 hover:bg-neutral-300 text-neutral-400 hover:text-slate-700 py-1 px-4 mx-1 rounded-xl active:bg-slate-800">
-                <Link
-                  to="/crudapi"
-                  className="block py-2 pl-3 pr-4 md:p-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
-                  aria-current="page"
-                >
-                  Crud API
-                </Link>
-              </li>
+
               <li className=" ease-in duration-200 hover:bg-neutral-300 text-neutral-400 hover:text-slate-700 py-1 px-4 mx-1 rounded-xl active:bg-slate-800">
                 <Link
                   to="/contactform"
@@ -63,7 +54,6 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/crudapp" element={<CrudApp />} />
-        <Route path="/crudapi" element={<CrudAPI />} />
         <Route path="/contactform" element={<ContactForm />} />
         <Route path="/modals" element={<Modals />} />
         <Route path="*" element={<Error404 />} />
