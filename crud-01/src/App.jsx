@@ -27,7 +27,7 @@ function App() {
                   className="block py-2 pl-3 pr-4 md:p-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                   aria-current="page"
                 >
-                  Crud Form
+                  Crud App
                 </Link>
               </li>
               <li className=" ease-in duration-200 hover:bg-neutral-300 text-neutral-400 hover:text-slate-700 py-1 px-4 mx-1 rounded-xl active:bg-slate-800">
@@ -49,7 +49,6 @@ function App() {
               </li>
               <li className=" ease-in duration-200 hover:bg-neutral-300 text-neutral-400 hover:text-slate-700 py-1 px-4 mx-1 rounded-xl active:bg-slate-800">
                 <Link
-                  exact
                   to="/modals"
                   className="block py-2 pl-3 pr-4 md:p-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                 >

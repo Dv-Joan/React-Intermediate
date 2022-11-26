@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
+import { CrudAppContext } from "./CrudApp";
 
 // El hook useHistory no FUNCA
 
-export default function CrudTableRow({ bike, setDataToEdit, deleteData }) {
+export default function CrudTableRow({ bike }) {
+  const crudAppContext = useContext(CrudAppContext);
   let { id, company, bikeModel } = bike;
   const handleDataToEdit = () => {
-    setDataToEdit(bike);
+    crudAppContext.setDataToEdit(bike);
     // useHistory.push(`/editar/${id}`);
   };
   return (
@@ -22,7 +24,7 @@ export default function CrudTableRow({ bike, setDataToEdit, deleteData }) {
         </button>
         <button
           className="mx-2 p-1 px-5 bg-red-500 cursor-pointer hover:bg-red-600 text-slate-100 rounded-full"
-          onClick={() => deleteData(id)}
+          onClick={() => crudAppContext.deleteData(id)}
         >
           Delete
         </button>

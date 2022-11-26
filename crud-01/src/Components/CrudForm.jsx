@@ -1,21 +1,18 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { CrudAppContext } from "./CrudApp";
 
 const initialForm = { id: null, company: "", bikeModel: "" };
 
-export default function CrudForm({
-  createData,
-  updateData,
-  dataToEdit,
-  setDataToEdit,
-}) {
+export default function CrudForm() {
   const [form, setForm] = useState(initialForm);
+  const crupAppContext = useContext(CrudAppContext);
   useEffect(() => {
-    if (dataToEdit) {
-      setForm(dataToEdit);
+    if (crupAppContext.dataToEdit) {
+      setForm(crupAppContext.dataToEdit);
     } else {
       setForm(initialForm);
     }
-  }, [dataToEdit]);
+  }, [crupAppContext.dataToEdit]);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -27,15 +24,15 @@ export default function CrudForm({
       alert("Please instert all DATA ");
     }
     if (form.id === null) {
-      createData(form);
+      crupAppContext.createData(form);
     } else {
-      updateData(form);
+      crupAppContext.updateData(form);
     }
     handleReset();
   };
   const handleReset = (e) => {
     setForm(initialForm);
-    setDataToEdit(null);
+    crupAppContext.setDataToEdit(null);
   };
   return (
     <div className="flex justify-center">

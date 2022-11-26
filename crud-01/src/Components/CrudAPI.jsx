@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import CrudForm from "./CrudForm";
 import CrudTable from "./CrudTable";
 import { helpHttp } from "../helper/helpHttp";
 import Loader from "./Loader";
 import ErrorMSG from "./ErrorMSG";
+
+export const CrudApiContext = createContext();
 
 export default function CrudAPI() {
   const [db, setDb] = useState(null);
@@ -75,36 +77,36 @@ export default function CrudAPI() {
 
   return (
     <div className="my-16">
-      <p className=" text-center font-Nabla text-7xl m-8 drop-shadow-xl">
-        BMX Street C.R.U.D <span className="mx-5"></span> API
-      </p>
-      <div className="flex justify-center">
-        <div className="bg-rose-200 rounded px-5 py-2 w-96 border-dotted border-2 border-slate-500 ">
-          <h3 className="text-red-700 font-Roboto  text-center">
-            PANEL DE
-            {dataToEdit ? (
-              <span className="font-bold"> EDICIÓN</span>
-            ) : (
-              <span className="font-bold"> AGREGACIÓN</span>
-            )}
-          </h3>
+      <CrudApiContext.Provider
+        value={{
+          createData,
+          updateData,
+          dataToEdit,
+          setDataToEdit,
+          db,
+          deleteData,
+        }}
+      >
+        <p className=" text-center font-Nabla text-7xl m-8 drop-shadow-xl">
+          BMX Street C.R.U.D <span className="mx-5"></span> API
+        </p>
+        <div className="flex justify-center">
+          <div className="bg-rose-200 rounded px-5 py-2 w-96 border-dotted border-2 border-slate-500 ">
+            <h3 className="text-red-700 font-Roboto  text-center">
+              PANEL DE
+              {dataToEdit ? (
+                <span className="font-bold"> EDICIÓN</span>
+              ) : (
+                <span className="font-bold"> AGREGACIÓN</span>
+              )}
+            </h3>
+          </div>
         </div>
-      </div>
-      <CrudForm
-        createData={createData}
-        updateData={updateData}
-        dataToEdit={dataToEdit}
-        setDataToEdit={setDataToEdit}
-      />
-      {loading && <Loader />}
-      {error && <ErrorMSG />}
-      {db && (
-        <CrudTable
-          data={db}
-          setDataToEdit={setDataToEdit}
-          deleteData={deleteData}
-        />
-      )}
+        <CrudForm />
+        {loading && <Loader />}
+        {error && <ErrorMSG />}
+        {db && <CrudTable />}
+      </CrudApiContext.Provider>
     </div>
   );
 }
